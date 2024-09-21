@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng thông tin</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <link href="jquery-ui.css" rel="stylesheet" />
+    <link href="jquery-ui.min.css" rel="stylesheet" />
+    <link href="type.css" rel="stylesheet" />
+    <script src="js/jquery-ui.min.js"></script>
+</head>
+<body>
+    <h2 style="text-align: center;">Danh sách người và vị trí</h2>
+
+    <table id="infoTable">
+        <thead>
+            <tr>
+                <th>Mã sv</th>
+                <th>Tên người</th>
+                <th>Vị trí</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <div class="controls">
+        <input type="text" id="nameInput" placeholder="Nhập tên người">
+        <select id="locationInput">
+            <option value="1">KTX</option>
+            <option value="2">Nhà trọ</option>
+            <option value="3">Trường</option>
+            <option value="4">Chợ</option>
+            <option value="5">Không biết đang ở đâu</option>
+        </select>
+        <button class="add-btn">Thêm</button>
+    </div>
+    <div id="dialog" title="Lịch sử"></div>
+</body>
+</html>
