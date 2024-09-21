@@ -147,5 +147,32 @@ namespace Read_Db
             return json;
         }
 
+        public string check_diadiem()
+        {
+            string json = "";
+            try
+            {
+
+                using (SqlConnection conn = new SqlConnection(cnstr))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = conn.CreateCommand())
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.CommandText = "SP_API";
+                        cmd.Parameters.Add("@action", SqlDbType.VarChar, 50).Value = "check_diadiem";
+                        object result = cmd.ExecuteScalar();
+                        json = (string)result;
+                    }
+                }
+            }
+            catch
+            {
+                json = "{\"ok\":0,\"msg\":\"Lỗi rồi\"}";
+            }
+
+            return json;
+        }
+
     }
 }

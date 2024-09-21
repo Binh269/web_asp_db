@@ -150,6 +150,24 @@
         }, 'json');
     };
 
+    function checkPositions() {
+        $.post('api.aspx', { action: 'check_diadiem' }, function (data) {
+            if (data.thoigian) {
+                alert("Tất cả sinh viên đều ở trường tại :"+data.thoigian);
+            }
+        }, 'json');
+    }
+
+
     $(".add-btn").click(themHang);
     loadTable();
+    setInterval(function () {
+        loadTable(); 
+    }, 5000);
+    setTimeout(function () {
+        checkPositions();
+    }, 5000);
+    setInterval(function () {
+        checkPositions();
+    }, 50000);
 });

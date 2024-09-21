@@ -1,21 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\C#\\NET\\web_simple\\web_api\\",
+  "WorkspaceRootPath": "E:\\C#\\NET\\web_simple\\web_apt_db\\web_api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9F170360-BB36-4CE2-A7FA-4F336649A963}|web_api.csproj|e:\\c#\\net\\web_simple\\web_api\\js\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{9F170360-BB36-4CE2-A7FA-4F336649A963}|web_api.csproj|e:\\c#\\net\\web_simple\\web_apt_db\\web_api\\js\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{9F170360-BB36-4CE2-A7FA-4F336649A963}|web_api.csproj|solutionrelative:js\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9C85F96-A713-4BEA-BB57-FFEB6D2A710D}|..\\Read_Db\\Read_Db.csproj|e:\\c#\\net\\web_simple\\read_db\\db_sql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9F170360-BB36-4CE2-A7FA-4F336649A963}|web_api.csproj|E:\\C#\\NET\\web_simple\\web_api\\api.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9F170360-BB36-4CE2-A7FA-4F336649A963}|web_api.csproj|e:\\c#\\net\\web_simple\\web_apt_db\\web_api\\api.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9F170360-BB36-4CE2-A7FA-4F336649A963}|web_api.csproj|solutionrelative:api.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9F170360-BB36-4CE2-A7FA-4F336649A963}|web_api.csproj|E:\\C#\\NET\\web_simple\\web_api\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9F170360-BB36-4CE2-A7FA-4F336649A963}|web_api.csproj|solutionrelative:index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -40,59 +33,29 @@
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "db_sql.cs",
-              "DocumentMoniker": "E:\\C#\\NET\\web_simple\\Read_Db\\db_sql.cs",
-              "RelativeDocumentMoniker": "..\\Read_Db\\db_sql.cs",
-              "ToolTip": "E:\\C#\\NET\\web_simple\\Read_Db\\db_sql.cs",
-              "RelativeToolTip": "..\\Read_Db\\db_sql.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAqwDYAAABbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T04:53:51.645Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "api.aspx.cs",
-              "DocumentMoniker": "E:\\C#\\NET\\web_simple\\web_api\\api.aspx.cs",
+              "DocumentMoniker": "E:\\C#\\NET\\web_simple\\web_apt_db\\web_api\\api.aspx.cs",
               "RelativeDocumentMoniker": "api.aspx.cs",
-              "ToolTip": "E:\\C#\\NET\\web_simple\\web_api\\api.aspx.cs",
+              "ToolTip": "E:\\C#\\NET\\web_simple\\web_apt_db\\web_api\\api.aspx.cs",
               "RelativeToolTip": "api.aspx.cs",
-              "ViewState": "AQIAADkAAAAAAAAAAAD4v0QAAAAMAAAA",
+              "ViewState": "AQIAAFsAAAAAAAAAAAAEwGwAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-20T04:08:41.043Z",
+              "WhenOpened": "2024-09-21T05:53:33.603Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "script.js",
-              "DocumentMoniker": "E:\\C#\\NET\\web_simple\\web_api\\js\\script.js",
+              "DocumentMoniker": "E:\\C#\\NET\\web_simple\\web_apt_db\\web_api\\js\\script.js",
               "RelativeDocumentMoniker": "js\\script.js",
-              "ToolTip": "E:\\C#\\NET\\web_simple\\web_api\\js\\script.js",
+              "ToolTip": "E:\\C#\\NET\\web_simple\\web_apt_db\\web_api\\js\\script.js",
               "RelativeToolTip": "js\\script.js",
-              "ViewState": "AQIAACsAAAAAAAAAAAAAAD0AAAANAAAA",
+              "ViewState": "AQIAAJsAAAAAAAAAAAAQwK0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-09-19T14:35:05.658Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "index.html",
-              "DocumentMoniker": "E:\\C#\\NET\\web_simple\\web_api\\index.html",
-              "RelativeDocumentMoniker": "index.html",
-              "ToolTip": "E:\\C#\\NET\\web_simple\\web_api\\index.html",
-              "RelativeToolTip": "index.html",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAACUAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-09-19T14:26:11.619Z",
+              "WhenOpened": "2024-09-21T05:50:42.721Z",
               "EditorCaption": ""
             }
           ]

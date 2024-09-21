@@ -33,6 +33,9 @@ namespace web_api
                 case "history":
                     get_history();
                     break;
+                case "check_diadiem":
+                    check_diadiem();
+                    break;
                 default:
                     thong_bao_loi();
                     break;
@@ -93,11 +96,17 @@ namespace web_api
             return db;
         }
 
-
         void get_status()
         {
             db_sql db = get_db();
             string json = db.get_status();
+            this.Response.Write(json);
+        }
+
+        void check_diadiem()
+        {
+            db_sql db = get_db();
+            string json = db.check_diadiem();
             this.Response.Write(json);
         }
     }
