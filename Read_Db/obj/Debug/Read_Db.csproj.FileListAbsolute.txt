@@ -4,9 +4,3 @@ E:\C#\NET\web_simple\Read_Db\obj\Debug\Read_Db.csproj.AssemblyReference.cache
 E:\C#\NET\web_simple\Read_Db\obj\Debug\Read_Db.csproj.CoreCompileInputs.cache
 E:\C#\NET\web_simple\Read_Db\obj\Debug\Read_Db.dll
 E:\C#\NET\web_simple\Read_Db\obj\Debug\Read_Db.pdb
-E:\C#\NET\web_simple\web_apt_db\Read_Db\bin\Debug\Read_Db.dll
-E:\C#\NET\web_simple\web_apt_db\Read_Db\bin\Debug\Read_Db.pdb
-E:\C#\NET\web_simple\web_apt_db\Read_Db\obj\Debug\Read_Db.csproj.AssemblyReference.cache
-E:\C#\NET\web_simple\web_apt_db\Read_Db\obj\Debug\Read_Db.csproj.CoreCompileInputs.cache
-E:\C#\NET\web_simple\web_apt_db\Read_Db\obj\Debug\Read_Db.dll
-E:\C#\NET\web_simple\web_apt_db\Read_Db\obj\Debug\Read_Db.pdb

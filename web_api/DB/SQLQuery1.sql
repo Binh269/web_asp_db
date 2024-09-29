@@ -1,6 +1,6 @@
 USE [web_quan_ly_57kmt]
 GO
-/****** Object:  Table [dbo].[lich_su]    Script Date: 21/09/2024 13:11:18 ******/
+/****** Object:  Table [dbo].[lich_su]    Script Date: 21/09/2024 12:22:38 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -16,7 +16,7 @@ CREATE TABLE [dbo].[lich_su](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[thanh_vien]    Script Date: 21/09/2024 13:11:18 ******/
+/****** Object:  Table [dbo].[thanh_vien]    Script Date: 21/09/2024 12:22:38 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -39,7 +39,7 @@ ON UPDATE CASCADE
 GO
 ALTER TABLE [dbo].[lich_su] CHECK CONSTRAINT [FK__lich_su__ma_than__4222D4EF]
 GO
-/****** Object:  StoredProcedure [dbo].[SP_API]    Script Date: 21/09/2024 13:11:18 ******/
+/****** Object:  StoredProcedure [dbo].[SP_API]    Script Date: 21/09/2024 12:22:38 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -114,27 +114,5 @@ BEGIN
         ORDER BY l.thoi_gian DESC
         FOR JSON PATH;
     END
-
-	ELSE IF (@action = 'check_diadiem')
-	BEGIN
-		DECLARE @count int;
-		SELECT @count = COUNT(*)
-		FROM thanh_vien
-		WHERE ma_vi_tri = 3;
-
-		DECLARE @total int;
-		SELECT @total = COUNT(*) FROM thanh_vien;
-
-		IF @count = @total
-		BEGIN
-			DECLARE @currentTime nvarchar(19) = CONVERT(nvarchar(19), GETDATE(), 120);
-			SELECT 
-				'Tất cả thành viên đều ở trường' AS message,
-				@currentTime AS thoigian
-			FOR JSON PATH, WITHOUT_ARRAY_WRAPPER;
-		END
-	END
 END
-
-
 GO

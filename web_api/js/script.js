@@ -150,24 +150,42 @@
         }, 'json');
     };
 
-    function checkPositions() {
-        $.post('api.aspx', { action: 'check_diadiem' }, function (data) {
-            if (data.thoigian) {
-                alert("Tất cả sinh viên đều ở trường tại :"+data.thoigian);
+    function login() {
+        var username = $("#usernameInput").val();
+        var password = $("#passwordInput").val();
+
+        if (!username || !password) {
+            alert("Vui lòng điền tên đăng nhập và mật khẩu.");
+            return;
+        }
+
+        $.post('aspx.cs',{ action: 'login', user: username, pass: password}, function (data) { 
+            if (data.ok === 1) {
+                alert("Đăng nhập thành công!");
+            } else {
+                alert("Đăng nhập thất bại: " + response.msg);
             }
-        }, 'json');
+        },'json');
     }
 
 
     $(".add-btn").click(themHang);
     loadTable();
-    setInterval(function () {
-        loadTable(); 
-    }, 5000);
-    setTimeout(function () {
-        checkPositions();
-    }, 5000);
-    setInterval(function () {
-        checkPositions();
-    }, 50000);
+    $("#openLoginModal").click(function () {
+        $("#loginModal").show();
+    });
+
+    $("#closeModal").click(function () {
+        $("#loginModal").hide();
+    });
+
+    $("#loginButton").click(function () {
+        login(); 
+    });
+
+    $(window).click(function (event) {
+        if (event.target.id === "loginModal") {
+            $("#loginModal").hide();
+        }
+    });
 });

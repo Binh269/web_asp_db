@@ -147,32 +147,61 @@ namespace Read_Db
             return json;
         }
 
-        public string check_diadiem()
+
+        public string login(string uid, string pwd)
         {
             string json = "";
-            try
+            using (SqlCommand cmd = new SqlCommand())
             {
-
-                using (SqlConnection conn = new SqlConnection(cnstr))
-                {
-                    conn.Open();
-                    using (SqlCommand cmd = conn.CreateCommand())
-                    {
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.CommandText = "SP_API";
-                        cmd.Parameters.Add("@action", SqlDbType.VarChar, 50).Value = "check_diadiem";
-                        object result = cmd.ExecuteScalar();
-                        json = (string)result;
-                    }
-                }
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "SP_API";
+                cmd.Parameters.Add("@action", SqlDbType.VarChar, 50).Value = "login";
+                cmd.Parameters.Add("user", SqlDbType.VarChar, 50).Value = uid;
+                cmd.Parameters.Add("pass", SqlDbType.VarChar, 50).Value = pwd;
+                object result = cmd.ExecuteScalar();
+                json = (string)result;
             }
-            catch
-            {
-                json = "{\"ok\":0,\"msg\":\"Lỗi rồi\"}";
-            }
-
             return json;
+
         }
 
+        //public string get_user(string uid)
+        //{
+        //    string json = "";
+        //    using (SqlCommand cmd = new SqlCommand())
+        //    {
+        //        cmd.CommandType = CommandType.StoredProcedure;
+        //        cmd.CommandText = "SP_API";
+        //        cmd.Parameters.Add("@action", SqlDbType.VarChar, 50).Value = "get_user";
+        //        cmd.Parameters.Add("uid", SqlDbType.VarChar, 50).Value = uid;
+        //        object result = cmd.ExecuteScalar();
+        //        json = (string)result;
+        //    }
+        //    return json;
+        //}
+
+        //public byte[] user_hash(string uid)
+        //{
+        //    byte[] storedHash = null;
+
+        //    using (SqlConnection conn = new SqlConnection(cnstr))
+        //    {
+        //        conn.Open();   
+        //        using (SqlCommand cmd = conn.CreateCommand())
+        //        {
+        //            cmd.CommandText = "SP_API";
+        //            cmd.CommandType = CommandType.StoredProcedure;
+        //            cmd.Parameters.Add("action", SqlDbType.VarChar, 50).Value = "user_hash";
+        //            cmd.Parameters.Add("user", SqlDbType.VarChar, 50).Value = uid;
+
+        //            object result = cmd.ExecuteScalar();
+        //            if (result != null)
+        //            {
+        //                storedHash = (byte[])result;
+        //            }
+        //        }
+        //    }
+        //    return storedHash;
+        //}
     }
 }

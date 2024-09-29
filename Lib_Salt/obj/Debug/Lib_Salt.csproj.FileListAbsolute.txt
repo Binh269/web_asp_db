@@ -1,0 +1,6 @@
+E:\C#\NET\web_simple\Lib_Salt\bin\Debug\Lib_Salt.dll
+E:\C#\NET\web_simple\Lib_Salt\bin\Debug\Lib_Salt.pdb
+E:\C#\NET\web_simple\Lib_Salt\obj\Debug\Lib_Salt.csproj.AssemblyReference.cache
+E:\C#\NET\web_simple\Lib_Salt\obj\Debug\Lib_Salt.csproj.CoreCompileInputs.cache
+E:\C#\NET\web_simple\Lib_Salt\obj\Debug\Lib_Salt.dll
+E:\C#\NET\web_simple\Lib_Salt\obj\Debug\Lib_Salt.pdb

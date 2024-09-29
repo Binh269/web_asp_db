@@ -5,6 +5,8 @@ using System.Web.Services;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using Read_Db;
+using System.Diagnostics;
+using Lib_Salt;
 
 namespace web_api
 {
@@ -21,6 +23,9 @@ namespace web_api
                 case "get_infor":
                     get_status();
                     break;
+                case "login":
+                    login();
+                    break;
                 case "add":
                     add_member();
                     break;
@@ -32,9 +37,6 @@ namespace web_api
                     break;
                 case "history":
                     get_history();
-                    break;
-                case "check_diadiem":
-                    check_diadiem();
                     break;
                 default:
                     thong_bao_loi();
@@ -96,6 +98,7 @@ namespace web_api
             return db;
         }
 
+
         void get_status()
         {
             db_sql db = get_db();
@@ -103,11 +106,54 @@ namespace web_api
             this.Response.Write(json);
         }
 
-        void check_diadiem()
+        //class LoginData
+        //{
+        //    public int ok { get; set; }
+        //    public string msg { get; set; }
+        //    public string user { get; set; }
+        //    public string name { get; set; }
+        //    public string lastLogin { get; set; }
+        //}
+
+        void login()
         {
+            string uid = this.Request["user"];
+            string pwd = this.Request["pass"];
             db_sql db = get_db();
-            string json = db.check_diadiem();
+            Salt salt = new Salt();
+            byte[] hashedPwd = salt.HashSHA1(pwd);
+            string pwdHex = BitConverter.ToString(hashedPwd).Replace("-", "");
+            string json = db.login(uid,pwdHex);
             this.Response.Write(json);
+            //try
+            //{
+            //    string uid = this.Request["user"];
+            //    string pwd = this.Request["pass"];
+
+            //    Salt salt = new Salt();
+            //    byte[] hashedPwd = salt.HashSHA1(pwd);
+            //    string pwdHex = BitConverter.ToString(hashedPwd).Replace("-", "");
+
+            //    db_sql db = get_db();
+            //    json = db.login(uid, pwdHex);
+
+            //    //LoginData loginData = JsonConvert.DeserializeObject<LoginData>(json);
+
+            //    if (loginData.ok == 1)
+            //    {
+            //        this.Session["login"] = loginData;
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    json = "{\"ok\":0,\"msg\":\"Lỗi: " + ex.Message + "\"}";
+            //}
+            //finally
+            //{
+            //    this.Response.ContentType = "application/json"; 
+            //    this.Response.Write(json);
+            //}
         }
+
     }
 }

@@ -12,6 +12,17 @@
     <script src="js/jquery-ui.min.js"></script>
 </head>
 <body>
+    <button id="openLoginModal">Đăng Nhập</button>
+
+    <div id="loginModal" style="display: none;">
+        <div class="modal-content">
+            <span id="closeModal" style="cursor: pointer;">&times;</span>
+            <h2>Đăng Nhập</h2>
+            <input type="text" id="usernameInput" placeholder="Tên đăng nhập" />
+            <input type="password" id="passwordInput" placeholder="Mật khẩu" />
+            <button id="loginButton">Đăng Nhập</button>
+        </div>
+    </div>
     <h2 style="text-align: center;">Danh sách người và vị trí</h2>
 
     <table id="infoTable">
