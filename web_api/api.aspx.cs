@@ -46,16 +46,34 @@ namespace web_api
                 case "generate_captcha":
                     GenerateCaptcha();
                     break;
+                case "validate_captcha":
+                    ValidateCaptcha();
+                    break;
                 default:
                     thong_bao_loi();
                     break;
             }
         }
 
+        private void ValidateCaptcha()
+        {
+            string captchaInput = this.Request["captcha"];
+            string captchaSession = Session["Captcha"] as string;
+
+            if (string.IsNullOrEmpty(captchaInput) || captchaInput.Equals(captchaSession, StringComparison.OrdinalIgnoreCase) == false)
+            {
+                this.Response.Write("{\"ok\":0, \"msg\":\"CAPTCHA không đúng.\"}");
+            }
+            else
+            {
+                this.Response.Write("{\"ok\":1, \"msg\":\"CAPTCHA hợp lệ.\"}");
+                login();
+            }
+        }
         private void GenerateCaptcha()
         {
             CaptchaGenerator captcha = new CaptchaGenerator();
-            Session["Captcha"] = captcha.CaptchaCode; // Lưu mã CAPTCHA vào session
+            Session["Captcha"] = captcha.CaptchaCode; 
             byte[] imageBytes = captcha.GenerateCaptchaImage();
 
             Response.ContentType = "image/png";
@@ -133,16 +151,6 @@ namespace web_api
             this.Response.Write(json);
         }
 
-        void generate_captcha()
-        {
-            CaptchaGenerator captcha = new CaptchaGenerator();
-            Session["Captcha"] = captcha.CaptchaCode; 
-            byte[] imageBytes = captcha.GenerateCaptchaImage();
-
-            this.Response.ContentType = "image/png";
-            this.Response.BinaryWrite(imageBytes);
-            this.Response.End();
-        }
 
         void login()
         {
@@ -154,7 +162,7 @@ namespace web_api
                 string captchaInput = this.Request["captcha"];
                 string captchaSession = Session["Captcha"] as string;
 
-                if (captchaInput != captchaSession)
+                if (captchaInput == null || !captchaInput.Equals(captchaSession, StringComparison.OrdinalIgnoreCase))
                 {
                     this.Response.Write("{\"ok\":0, \"msg\":\"CAPTCHA không đúng.\"}");
                     return;
@@ -166,16 +174,17 @@ namespace web_api
             string json = db.login(uid, pwd);
             this.Response.Write(json);
 
-            // Tăng số lần đăng nhập sai
-            if (json.Contains("\"ok\":0")) // Nếu đăng nhập thất bại
+            if (json.Contains("\"ok\":0"))
             {
                 loginAttempts++;
             }
             else
             {
-                loginAttempts = 0; // Đặt lại số lần nếu đăng nhập thành công
+                loginAttempts = 0;
+                Session.Remove("Captcha");
             }
         }
+
 
     }
 }

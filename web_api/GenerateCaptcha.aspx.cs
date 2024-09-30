@@ -13,14 +13,14 @@ namespace web_api
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            CaptchaGenerator generator = new CaptchaGenerator();
-            Session["Captcha"] = generator.CaptchaCode; 
+            //CaptchaGenerator generator = new CaptchaGenerator();
+            //Session["Captcha"] = generator.CaptchaCode; 
 
-            byte[] captchaImage = generator.GenerateCaptchaImage();
-            Response.Clear();
-            Response.ContentType = "image/png";
-            Response.BinaryWrite(captchaImage);
-            Response.End();
+            //byte[] captchaImage = generator.GenerateCaptchaImage();
+            //Response.Clear();
+            //Response.ContentType = "image/png";
+            //Response.BinaryWrite(captchaImage);
+            //Response.End();
         }
     }
 }
