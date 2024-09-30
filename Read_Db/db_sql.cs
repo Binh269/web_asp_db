@@ -147,6 +147,21 @@ namespace Read_Db
             return json;
         }
 
+        public string salt(string uid)
+        {
+            string json = "";
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "SP_API";
+                cmd.Parameters.Add("@action", SqlDbType.VarChar, 50).Value = "salt";
+                cmd.Parameters.Add("uid", SqlDbType.VarChar, 50).Value = uid;
+                object result = cmd.ExecuteScalar();
+                json = (string)result;
+            }
+            return json;
+
+        }
 
         public string login(string uid, string pwd)
         {
