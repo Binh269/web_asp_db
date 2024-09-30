@@ -150,33 +150,6 @@
         }, 'json');
     };
 
-    //function login() {
-    //    var username = $("#usernameInput").val();
-    //    var password = $("#passwordInput").val();
-
-    //    if (!username || !password) {
-    //        alert("Vui lòng điền tên đăng nhập và mật khẩu.");
-    //        return;
-    //    }
-    //    $.post('api.aspx', { action: 'get_salt', uid: username }, function (data) {
-    //        if (data.ok === 1) {
-    //            salt_value = data.salt;
-    //            alert("lấy salt thành công " + salt_value);
-    //        } else {
-    //            alert("Đăng nhập thất bại: " );
-    //        }
-    //    }, 'json');
-    //    var pass_login = password + salt_value;
-    //    console.log(password);
-    //    $.post('aspx.cs', { action: 'login', user: username, pass: pass_login }, function (data) {
-    //        if (data.ok === 1) {
-    //            alert("Đăng nhập thành công!");
-    //        } else {
-    //            alert("Đăng nhập thất bại: " + response.msg);
-    //        }
-    //    },'json');
-    //}
-
     function get_salt(callback) {
         var username = $("#usernameInput").val();
         $.post('api.aspx', { action: 'get_salt', uid: username }, function (data) {
@@ -204,16 +177,49 @@
         $.post('api.aspx', { action: 'login', uid: username, pass: hashedPassword }, function (data) {
             if (data.ok === 1) {
                 alert("Đăng nhập thành công!");
+                loginAttempts = 0;
             } else {
+                loginAttempts++;
+                if (loginAttempts >= 3) {
+                    $("#captchaSection").show();
+                    $("#captchaImage").attr("src", "api.aspx?action=generate_captcha"); 
+                }
                 alert("Đăng nhập thất bại: " + data.msg); 
             }
         }, 'json');
     }
 
+    function showCaptcha() {
+        $("#captchaSection").show(); 
+        refreshCaptcha(); 
+    }
+
+    function validateCaptcha(callback) {
+        var captchaInput = $("#captchaInput").val();
+        $.post('api.aspx', { action: 'validate_captcha', captcha: captchaInput }, function (data) {
+            if (data.ok === 1) {
+                callback(); 
+            } else {
+                alert("CAPTCHA sai, vui lòng nhập lại.");
+                refreshCaptcha(); 
+            }
+        }, 'json');
+    }
+
+    var loginAttempts = 0;
+
     function login() {
-        get_salt(function (salt_value) {
-            performLogin(salt_value); 
-        });
+        if (loginAttempts >= 3) {
+            validateCaptcha(function () {
+                get_salt(function (salt_value) {
+                    performLogin(salt_value);
+                });
+            });
+        } else {
+            get_salt(function (salt_value) {
+                performLogin(salt_value);
+            });
+        }
     }
 
 

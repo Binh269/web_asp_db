@@ -1,0 +1,6 @@
+E:\C#\NET\web_simple\web_apt_db\Capcha\bin\Debug\Capcha.dll
+E:\C#\NET\web_simple\web_apt_db\Capcha\bin\Debug\Capcha.pdb
+E:\C#\NET\web_simple\web_apt_db\Capcha\obj\Debug\Capcha.csproj.AssemblyReference.cache
+E:\C#\NET\web_simple\web_apt_db\Capcha\obj\Debug\Capcha.csproj.CoreCompileInputs.cache
+E:\C#\NET\web_simple\web_apt_db\Capcha\obj\Debug\Capcha.dll
+E:\C#\NET\web_simple\web_apt_db\Capcha\obj\Debug\Capcha.pdb

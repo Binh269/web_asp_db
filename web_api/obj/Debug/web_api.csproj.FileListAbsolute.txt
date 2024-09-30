@@ -26,3 +26,5 @@ E:\C#\NET\web_simple\web_apt_db\web_api\obj\Debug\web_api.csproj.CoreCompileInpu
 E:\C#\NET\web_simple\web_apt_db\web_api\obj\Debug\web_api.csproj.Up2Date
 E:\C#\NET\web_simple\web_apt_db\web_api\obj\Debug\web_api.dll
 E:\C#\NET\web_simple\web_apt_db\web_api\obj\Debug\web_api.pdb
+E:\C#\NET\web_simple\web_apt_db\web_api\bin\Capcha.dll
+E:\C#\NET\web_simple\web_apt_db\web_api\bin\Capcha.pdb

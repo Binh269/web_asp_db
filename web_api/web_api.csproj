@@ -39,6 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Capcha">
+      <HintPath>..\Capcha\bin\Debug\Capcha.dll</HintPath>
+    </Reference>
     <Reference Include="Lib_Salt, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib_Salt\bin\Debug\Lib_Salt.dll</HintPath>
@@ -69,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="api.aspx" />
+    <Content Include="GenerateCaptcha.aspx" />
     <Content Include="index.html" />
     <Content Include="jquery-ui.css" />
     <Content Include="jquery-ui.min.css" />
@@ -87,6 +91,13 @@
     </Compile>
     <Compile Include="api.aspx.designer.cs">
       <DependentUpon>api.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GenerateCaptcha.aspx.cs">
+      <DependentUpon>GenerateCaptcha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GenerateCaptcha.aspx.designer.cs">
+      <DependentUpon>GenerateCaptcha.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -21,6 +21,13 @@
             <h2>Đăng Nhập</h2>
             <input type="text" id="usernameInput" placeholder="Tên đăng nhập" />
             <input type="password" id="passwordInput" placeholder="Mật khẩu" />
+            <div id="captchaSection" style="display: none;">
+                <img id="captchaImage" src="api.aspx?action=generate_captcha" alt="CAPTCHA" />
+                <input type="text" id="captchaInput" placeholder="Nhập CAPTCHA" />
+                <button onclick="validateCaptcha(function() { login(); })">Xác thực CAPTCHA</button>
+            </div>
+
+
             <button id="loginButton">Đăng Nhập</button>
         </div>
     </div>

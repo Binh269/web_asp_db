@@ -7,12 +7,14 @@ using System.Collections.Generic;
 using Read_Db;
 using System.Diagnostics;
 using Lib_Salt;
+using Capcha;
 
 namespace web_api
 {
     public partial class api : System.Web.UI.Page
     {
         private static string connectionString = "Data Source=.;Initial Catalog=web_quan_ly_57kmt;Integrated Security=True";
+        private static int loginAttempts = 0; 
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -41,10 +43,24 @@ namespace web_api
                 case "history":
                     get_history();
                     break;
+                case "generate_captcha":
+                    GenerateCaptcha();
+                    break;
                 default:
                     thong_bao_loi();
                     break;
             }
+        }
+
+        private void GenerateCaptcha()
+        {
+            CaptchaGenerator captcha = new CaptchaGenerator();
+            Session["Captcha"] = captcha.CaptchaCode; // Lưu mã CAPTCHA vào session
+            byte[] imageBytes = captcha.GenerateCaptchaImage();
+
+            Response.ContentType = "image/png";
+            Response.BinaryWrite(imageBytes);
+            Response.End();
         }
 
         void add_member()
@@ -117,44 +133,48 @@ namespace web_api
             this.Response.Write(json);
         }
 
+        void generate_captcha()
+        {
+            CaptchaGenerator captcha = new CaptchaGenerator();
+            Session["Captcha"] = captcha.CaptchaCode; 
+            byte[] imageBytes = captcha.GenerateCaptchaImage();
+
+            this.Response.ContentType = "image/png";
+            this.Response.BinaryWrite(imageBytes);
+            this.Response.End();
+        }
+
         void login()
         {
             string uid = this.Request["uid"];
             string pwd = this.Request["pass"];
+
+            if (loginAttempts >= 3)
+            {
+                string captchaInput = this.Request["captcha"];
+                string captchaSession = Session["Captcha"] as string;
+
+                if (captchaInput != captchaSession)
+                {
+                    this.Response.Write("{\"ok\":0, \"msg\":\"CAPTCHA không đúng.\"}");
+                    return;
+                }
+            }
+
             db_sql db = get_db();
             Salt salt = new Salt();
-            //byte[] hashedPwd = salt.HashSHA1(pwd);
-            //string pwdHex = BitConverter.ToString(hashedPwd).Replace("-", "");
             string json = db.login(uid, pwd);
             this.Response.Write(json);
-            //try
-            //{
-            //    string uid = this.Request["user"];
-            //    string pwd = this.Request["pass"];
 
-            //    Salt salt = new Salt();
-            //    byte[] hashedPwd = salt.HashSHA1(pwd);
-            //    string pwdHex = BitConverter.ToString(hashedPwd).Replace("-", "");
-
-            //    db_sql db = get_db();
-            //    json = db.login(uid, pwdHex);
-
-            //    //LoginData loginData = JsonConvert.DeserializeObject<LoginData>(json);
-
-            //    if (loginData.ok == 1)
-            //    {
-            //        this.Session["login"] = loginData;
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    json = "{\"ok\":0,\"msg\":\"Lỗi: " + ex.Message + "\"}";
-            //}
-            //finally
-            //{
-            //    this.Response.ContentType = "application/json"; 
-            //    this.Response.Write(json);
-            //}
+            // Tăng số lần đăng nhập sai
+            if (json.Contains("\"ok\":0")) // Nếu đăng nhập thất bại
+            {
+                loginAttempts++;
+            }
+            else
+            {
+                loginAttempts = 0; // Đặt lại số lần nếu đăng nhập thành công
+            }
         }
 
     }
