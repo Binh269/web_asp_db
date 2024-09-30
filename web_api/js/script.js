@@ -180,9 +180,10 @@
     function get_salt(callback) {
         var username = $("#usernameInput").val();
         $.post('api.aspx', { action: 'get_salt', uid: username }, function (data) {
-            if (data.ok) {
+            if (data.ok === 1) {
                 salt_value = data.salt;
-                alert("lấy salt thành công " + salt_value);
+                console.log("lấy salt thành công " + salt_value);
+                callback(salt_value);
             } else {
                 alert("Đăng nhập thất bại: " );
             }
@@ -199,7 +200,8 @@
         }
 
         var pass_login = password + salt_value; 
-        $.post('api.aspx', { action: 'login', uid: username, pass: pass_login }, function (data) {
+        var hashedPassword = CryptoJS.SHA1(pass_login).toString();
+        $.post('api.aspx', { action: 'login', uid: username, pass: hashedPassword }, function (data) {
             if (data.ok === 1) {
                 alert("Đăng nhập thành công!");
             } else {

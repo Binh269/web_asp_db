@@ -123,9 +123,9 @@ namespace web_api
             string pwd = this.Request["pass"];
             db_sql db = get_db();
             Salt salt = new Salt();
-            byte[] hashedPwd = salt.HashSHA1(pwd);
-            string pwdHex = BitConverter.ToString(hashedPwd).Replace("-", "");
-            string json = db.login(uid,pwdHex);
+            //byte[] hashedPwd = salt.HashSHA1(pwd);
+            //string pwdHex = BitConverter.ToString(hashedPwd).Replace("-", "");
+            string json = db.login(uid, pwd);
             this.Response.Write(json);
             //try
             //{
