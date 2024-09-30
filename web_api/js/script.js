@@ -150,7 +150,46 @@
         }, 'json');
     };
 
-    function login() {
+    //function login() {
+    //    var username = $("#usernameInput").val();
+    //    var password = $("#passwordInput").val();
+
+    //    if (!username || !password) {
+    //        alert("Vui lòng điền tên đăng nhập và mật khẩu.");
+    //        return;
+    //    }
+    //    $.post('api.aspx', { action: 'get_salt', uid: username }, function (data) {
+    //        if (data.ok === 1) {
+    //            salt_value = data.salt;
+    //            alert("lấy salt thành công " + salt_value);
+    //        } else {
+    //            alert("Đăng nhập thất bại: " );
+    //        }
+    //    }, 'json');
+    //    var pass_login = password + salt_value;
+    //    console.log(password);
+    //    $.post('aspx.cs', { action: 'login', user: username, pass: pass_login }, function (data) {
+    //        if (data.ok === 1) {
+    //            alert("Đăng nhập thành công!");
+    //        } else {
+    //            alert("Đăng nhập thất bại: " + response.msg);
+    //        }
+    //    },'json');
+    //}
+
+    function get_salt(callback) {
+        var username = $("#usernameInput").val();
+        $.post('api.aspx', { action: 'get_salt', uid: username }, function (data) {
+            if (data.ok) {
+                salt_value = data.salt;
+                alert("lấy salt thành công " + salt_value);
+            } else {
+                alert("Đăng nhập thất bại: " );
+            }
+        }, 'json');
+    }
+
+    function performLogin(salt_value) {
         var username = $("#usernameInput").val();
         var password = $("#passwordInput").val();
 
@@ -159,14 +198,22 @@
             return;
         }
 
-        $.post('aspx.cs',{ action: 'login', user: username, pass: password}, function (data) { 
+        var pass_login = password + salt_value; 
+        $.post('api.aspx', { action: 'login', uid: username, pass: pass_login }, function (data) {
             if (data.ok === 1) {
                 alert("Đăng nhập thành công!");
             } else {
-                alert("Đăng nhập thất bại: " + response.msg);
+                alert("Đăng nhập thất bại: " + data.msg); 
             }
-        },'json');
+        }, 'json');
     }
+
+    function login() {
+        get_salt(function (salt_value) {
+            performLogin(salt_value); 
+        });
+    }
+
 
 
     $(".add-btn").click(themHang);

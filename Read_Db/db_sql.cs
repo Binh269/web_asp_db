@@ -150,33 +150,59 @@ namespace Read_Db
         public string salt(string uid)
         {
             string json = "";
-            using (SqlCommand cmd = new SqlCommand())
             {
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "SP_API";
-                cmd.Parameters.Add("@action", SqlDbType.VarChar, 50).Value = "salt";
-                cmd.Parameters.Add("uid", SqlDbType.VarChar, 50).Value = uid;
-                object result = cmd.ExecuteScalar();
-                json = (string)result;
+                try
+                {
+                    using (SqlConnection conn = new SqlConnection(cnstr))
+                    {
+                        conn.Open();
+                        using (SqlCommand cmd = conn.CreateCommand())
+                        {
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.CommandText = "SP_API";
+                            cmd.Parameters.Add("@action", SqlDbType.VarChar, 50).Value = "get_salt";
+                            cmd.Parameters.Add("@uid", SqlDbType.VarChar, 50).Value = uid;
+                            object result = cmd.ExecuteScalar();
+                            json = (string)result;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    json = "{\"ok\":0,\"msg\":\"Lỗi rồi: " + ex.Message + "\"}";
+                }
+                return json;
             }
-            return json;
-
         }
 
         public string login(string uid, string pwd)
         {
             string json = "";
-            using (SqlCommand cmd = new SqlCommand())
             {
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "SP_API";
-                cmd.Parameters.Add("@action", SqlDbType.VarChar, 50).Value = "login";
-                cmd.Parameters.Add("user", SqlDbType.VarChar, 50).Value = uid;
-                cmd.Parameters.Add("pass", SqlDbType.VarChar, 50).Value = pwd;
-                object result = cmd.ExecuteScalar();
-                json = (string)result;
+                try
+                {
+                    using (SqlConnection conn = new SqlConnection(cnstr))
+                    {
+                        conn.Open();
+                        using (SqlCommand cmd = conn.CreateCommand())
+                        {
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.CommandText = "SP_API";
+                            cmd.Parameters.Add("@action", SqlDbType.VarChar, 50).Value = "login";
+                            cmd.Parameters.Add("@uid", SqlDbType.VarChar, 50).Value = uid;
+                            cmd.Parameters.Add("@pass", SqlDbType.VarChar, 50).Value = pwd;
+                            object result = cmd.ExecuteScalar();
+                            json = (string)result;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    json = "{\"ok\":0,\"msg\":\"Lỗi rồi: " + ex.Message + "\"}";
+                }
+                return json;
             }
-            return json;
+
 
         }
 

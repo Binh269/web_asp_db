@@ -23,6 +23,9 @@ namespace web_api
                 case "get_infor":
                     get_status();
                     break;
+                case "get_salt":
+                    get_salt();
+                    break;
                 case "login":
                     login();
                     break;
@@ -106,18 +109,17 @@ namespace web_api
             this.Response.Write(json);
         }
 
-        //class LoginData
-        //{
-        //    public int ok { get; set; }
-        //    public string msg { get; set; }
-        //    public string user { get; set; }
-        //    public string name { get; set; }
-        //    public string lastLogin { get; set; }
-        //}
+        void get_salt()
+        {
+            string uid = this.Request["uid"];
+            db_sql db = get_db();
+            string json = db.salt(uid);
+            this.Response.Write(json);
+        }
 
         void login()
         {
-            string uid = this.Request["user"];
+            string uid = this.Request["uid"];
             string pwd = this.Request["pass"];
             db_sql db = get_db();
             Salt salt = new Salt();
