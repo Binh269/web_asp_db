@@ -446,7 +446,8 @@ $(document).ready(function () {
     function validateCaptcha(callback) {
         var captchaInput = $("#captchaInput").val();
         $.post('api.aspx', { action: 'validate_captcha', captcha: captchaInput }, function (data) {
-            if (data.ok === 1) {
+            if (data.ok) {
+                loginAttempts = 0;
                 callback();
             } else {
                 alert("CAPTCHA sai, vui lòng nhập lại.");
@@ -472,7 +473,7 @@ $(document).ready(function () {
         }
     }
     function refreshCaptcha() {
-        $("#captchaImage").attr("src", "api.aspx?action=generate_captcha&" + new Date().getTime()); // thêm thời gian để tránh cache
+        $("#captchaImage").attr("src", "api.aspx?action=generate_captcha&" + new Date().getTime());
     }
 
 
@@ -492,9 +493,9 @@ $(document).ready(function () {
         login();
     });
 
-    $(window).click(function (event) {
-        if (event.target.id === "loginModal") {
-            $("#loginModal").hide();
-        }
-    });
+    //$(window).click(function (event) {
+    //    if (event.target.id === "loginModal") {
+    //        $("#loginModal").hide();
+    //    }
+    //});
 });

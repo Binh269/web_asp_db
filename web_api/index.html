@@ -1,66 +1,4 @@
-﻿<!--<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bảng thông tin</title>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/script.js"></script>
-    <link href="jquery-ui.css" rel="stylesheet" />
-    <link href="jquery-ui.min.css" rel="stylesheet" />
-    <link href="type.css" rel="stylesheet" />
-    <script src="js/crypto-js.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-</head>
-<body>
-    <button id="openLoginModal">Đăng Nhập</button>
-
-    <div id="loginModal" style="display: none;">
-        <div class="modal-content">
-            <span id="closeModal" style="cursor: pointer;">&times;</span>
-            <h2>Đăng Nhập</h2>
-            <input type="text" id="usernameInput" placeholder="Tên đăng nhập" />
-            <input type="password" id="passwordInput" placeholder="Mật khẩu" />
-            <div id="captchaSection" style="display: none;">
-                <img id="captchaImage" src="api.aspx?action=generate_captcha" alt="CAPTCHA" />
-                <input type="text" id="captchaInput" placeholder="Nhập CAPTCHA" />
-                <button onclick="validateCaptcha(function() { login(); })">Xác thực CAPTCHA</button>
-            </div>
-
-
-            <button id="loginButton">Đăng Nhập</button>
-        </div>
-    </div>
-    <h2 style="text-align: center;">Danh sách người và vị trí</h2>
-
-    <table id="infoTable">
-        <thead>
-            <tr>
-                <th>Mã sv</th>
-                <th>Tên người</th>
-                <th>Vị trí</th>
-                <th>Hành động</th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
-
-    <div class="controls">
-        <input type="text" id="nameInput" placeholder="Nhập tên người">
-        <select id="locationInput">
-            <option value="1">KTX</option>
-            <option value="2">Nhà trọ</option>
-            <option value="3">Trường</option>
-            <option value="4">Chợ</option>
-            <option value="5">Không biết đang ở đâu</option>
-        </select>
-        <button class="add-btn">Thêm</button>
-    </div>
-    <div id="dialog" title="Lịch sử"></div>
-</body>
-</html>-->
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
@@ -84,12 +22,10 @@
             <input type="text" id="usernameInput" placeholder="Tên đăng nhập" />
             <input type="password" id="passwordInput" placeholder="Mật khẩu" />
 
-            <!-- Phần CAPTCHA -->
             <div id="captchaSection" style="display: none;" class="captcha-container">
                 <img id="captchaImage" src="api.aspx?action=generate_captcha" alt="CAPTCHA" />
                 <input type="text" id="captchaInput" placeholder="Nhập CAPTCHA" />
                 <button id="refreshCaptcha" class="refresh-btn">Tải lại CAPTCHA</button>
-                <button onclick="validateCaptcha(function() { login(); })" class="validate-btn">Xác thực CAPTCHA</button>
             </div>
 
             <button id="loginButton" class="login-btn">Đăng Nhập</button>

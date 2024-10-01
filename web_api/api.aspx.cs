@@ -66,8 +66,8 @@ namespace web_api
             }
             else
             {
+                loginAttempts = 0;
                 this.Response.Write("{\"ok\":1, \"msg\":\"CAPTCHA hợp lệ.\"}");
-                login();
             }
         }
         private void GenerateCaptcha()
