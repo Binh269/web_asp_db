@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lib_Salt", "..\Lib_Salt\Lib
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capcha", "..\Capcha\Capcha.csproj", "{7D014DF5-D793-4572-B703-4F2AAC135756}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "login_app", "..\login_app\login_app.csproj", "{9D6D6CCC-4CFA-40B7-BF97-BEC364F19A46}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{7D014DF5-D793-4572-B703-4F2AAC135756}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D014DF5-D793-4572-B703-4F2AAC135756}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D014DF5-D793-4572-B703-4F2AAC135756}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D6D6CCC-4CFA-40B7-BF97-BEC364F19A46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D6D6CCC-4CFA-40B7-BF97-BEC364F19A46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D6D6CCC-4CFA-40B7-BF97-BEC364F19A46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D6D6CCC-4CFA-40B7-BF97-BEC364F19A46}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

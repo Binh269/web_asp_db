@@ -1,0 +1,12 @@
+E:\C#\NET\web_simple\web_apt_db\login_app\bin\Debug\login_app.exe
+E:\C#\NET\web_simple\web_apt_db\login_app\bin\Debug\login_app.pdb
+E:\C#\NET\web_simple\web_apt_db\login_app\bin\Debug\Capcha.dll
+E:\C#\NET\web_simple\web_apt_db\login_app\bin\Debug\Capcha.pdb
+E:\C#\NET\web_simple\web_apt_db\login_app\obj\Debug\login_app.csproj.AssemblyReference.cache
+E:\C#\NET\web_simple\web_apt_db\login_app\obj\Debug\login_app.Form1.resources
+E:\C#\NET\web_simple\web_apt_db\login_app\obj\Debug\login_app.Properties.Resources.resources
+E:\C#\NET\web_simple\web_apt_db\login_app\obj\Debug\login_app.csproj.GenerateResource.cache
+E:\C#\NET\web_simple\web_apt_db\login_app\obj\Debug\login_app.csproj.CoreCompileInputs.cache
+E:\C#\NET\web_simple\web_apt_db\login_app\obj\Debug\login_app.csproj.Up2Date
+E:\C#\NET\web_simple\web_apt_db\login_app\obj\Debug\login_app.exe
+E:\C#\NET\web_simple\web_apt_db\login_app\obj\Debug\login_app.pdb
