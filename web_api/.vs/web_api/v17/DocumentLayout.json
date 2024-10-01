@@ -3,18 +3,19 @@
   "WorkspaceRootPath": "E:\\C#\\NET\\web_simple\\web_apt_db\\web_api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9D6D6CCC-4CFA-40B7-BF97-BEC364F19A46}|..\\login_app\\login_app.csproj|e:\\c#\\net\\web_simple\\web_apt_db\\login_app\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9F170360-BB36-4CE2-A7FA-4F336649A963}|web_api.csproj|e:\\c#\\net\\web_simple\\web_apt_db\\web_api\\js\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{9F170360-BB36-4CE2-A7FA-4F336649A963}|web_api.csproj|solutionrelative:js\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F170360-BB36-4CE2-A7FA-4F336649A963}|web_api.csproj|e:\\c#\\net\\web_simple\\web_apt_db\\web_api\\api.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F170360-BB36-4CE2-A7FA-4F336649A963}|web_api.csproj|solutionrelative:api.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7D014DF5-D793-4572-B703-4F2AAC135756}|..\\Capcha\\Capcha.csproj|e:\\c#\\net\\web_simple\\web_apt_db\\capcha\\captchagenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9F170360-BB36-4CE2-A7FA-4F336649A963}|web_api.csproj|E:\\C#\\NET\\web_simple\\web_apt_db\\web_api\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{9F170360-BB36-4CE2-A7FA-4F336649A963}|web_api.csproj|e:\\c#\\net\\web_simple\\web_apt_db\\web_api\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{9F170360-BB36-4CE2-A7FA-4F336649A963}|web_api.csproj|solutionrelative:index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9F170360-BB36-4CE2-A7FA-4F336649A963}|web_api.csproj|E:\\C#\\NET\\web_simple\\web_apt_db\\web_api\\api.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9F170360-BB36-4CE2-A7FA-4F336649A963}|web_api.csproj|solutionrelative:api.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9F170360-BB36-4CE2-A7FA-4F336649A963}|web_api.csproj|E:\\C#\\NET\\web_simple\\web_apt_db\\web_api\\type.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -45,27 +46,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "E:\\C#\\NET\\web_simple\\web_apt_db\\login_app\\Form1.cs",
-              "RelativeDocumentMoniker": "..\\login_app\\Form1.cs",
-              "ToolTip": "E:\\C#\\NET\\web_simple\\web_apt_db\\login_app\\Form1.cs",
-              "RelativeToolTip": "..\\login_app\\Form1.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADIAAABNAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-01T01:58:03.725Z",
+              "Title": "script.js",
+              "DocumentMoniker": "E:\\C#\\NET\\web_simple\\web_apt_db\\web_api\\js\\script.js",
+              "RelativeDocumentMoniker": "js\\script.js",
+              "ToolTip": "E:\\C#\\NET\\web_simple\\web_apt_db\\web_api\\js\\script.js*",
+              "RelativeToolTip": "js\\script.js*",
+              "ViewState": "AQIAAJgAAAAAAAAAAAAgwGoAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-10-01T08:53:04.095Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "api.aspx.cs",
+              "DocumentMoniker": "E:\\C#\\NET\\web_simple\\web_apt_db\\web_api\\api.aspx.cs",
+              "RelativeDocumentMoniker": "api.aspx.cs",
+              "ToolTip": "E:\\C#\\NET\\web_simple\\web_apt_db\\web_api\\api.aspx.cs",
+              "RelativeToolTip": "api.aspx.cs",
+              "ViewState": "AQIAADoAAAAAAAAAAAAQwEYAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T08:22:56.276Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "CaptchaGenerator.cs",
               "DocumentMoniker": "E:\\C#\\NET\\web_simple\\web_apt_db\\Capcha\\CaptchaGenerator.cs",
               "RelativeDocumentMoniker": "..\\Capcha\\CaptchaGenerator.cs",
               "ToolTip": "E:\\C#\\NET\\web_simple\\web_apt_db\\Capcha\\CaptchaGenerator.cs",
               "RelativeToolTip": "..\\Capcha\\CaptchaGenerator.cs",
-              "ViewState": "AQIAACUAAAAAAAAAAAAqwFYAAAANAAAA",
+              "ViewState": "AQIAACoAAAAAAAAAAAAqwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-30T15:01:00.731Z",
+              "WhenOpened": "2024-10-01T08:06:38.87Z",
               "EditorCaption": ""
             },
             {
@@ -78,31 +92,17 @@
               "RelativeToolTip": "type.css",
               "ViewState": "AQIAAJMAAAAAAAAAAAAAAKoAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-09-30T14:54:50.053Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-30T14:54:50.053Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "api.aspx.cs",
-              "DocumentMoniker": "E:\\C#\\NET\\web_simple\\web_apt_db\\web_api\\api.aspx.cs",
-              "RelativeDocumentMoniker": "api.aspx.cs",
-              "ToolTip": "E:\\C#\\NET\\web_simple\\web_apt_db\\web_api\\api.aspx.cs",
-              "RelativeToolTip": "api.aspx.cs",
-              "ViewState": "AQIAAJsAAAAAAAAAAAAAwKEAAAA0AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-30T14:35:32.924Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "index.html",
               "DocumentMoniker": "E:\\C#\\NET\\web_simple\\web_apt_db\\web_api\\index.html",
               "RelativeDocumentMoniker": "index.html",
               "ToolTip": "E:\\C#\\NET\\web_simple\\web_apt_db\\web_api\\index.html",
               "RelativeToolTip": "index.html",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABYAAAA0AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC0AAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2024-09-19T14:26:11.619Z",
               "EditorCaption": ""
