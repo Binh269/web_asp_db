@@ -1,0 +1,23 @@
+- Trước tiên là câc cấu trúc js , html , css , jQuery đã sử dụng trong bài :
+  + Cấu trúc jQuery chủ yếu sử dụng :  $("#id").click(function () {} : cấu trúc $ là gọi jQuery để thực hiện hành động là click , # là thuộc tính của select  
+  + Cấu trúc html cơ bản : Tạm biết cấch sử dụng , có nền tảng cơ bản
+  + Cấu trúc css cơ bản + quy tắc BEM : Biết các cấu trúc css cơ bản
+  + Js thông thường : Biết và viết được các cấu trúc js cow bản
+- C#:
+  + Biết cách code các bài toán đơn giản
+  + Biết sử dụng các cấu trúc cơ bản
+  + Lắm được cách thức hoạt động truyền và nhận dữ liệu của web font và windown font 
+  + Biết vè viết được các class library khi sử dụng
+- Thời gian rảnh :
+  + Nâng cao khả năng viết code từ code theo ý thích 
+  + Đang tự rèn luyện theo thời gian tự học >= 5h\ngày
+  + Học thêm và sử dụng python
+- Tự đánh giá trình độ hiện tại : 
+  + Gọi là biết code cơ bản , khả năng thực tế và làm việc chưa được cao
+  + Khả năng xin được thực tập và việc tỉ lệ rất thấp
+  + Có khả năng đọc và biết debug python
+  + Không ngại công việc  
+  + Khả năng tự học và tìm tài liệu chưa được tốt : chủ yếu lấy tài liệu và học theo các kênh youtube như : kteam ,... và các nguồn tài liệu từ các đàn a 
+- Dự tính tương lai : 
+  + Mong muốn được tuyển vào 1 cty , doanh nghiệp có khả nănggg phát triển bản thân , mức lương phù hợp với môi trường ở hà nội
+  + Vị trí mong muốn : dev, backend 
